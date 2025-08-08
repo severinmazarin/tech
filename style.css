@@ -1,0 +1,31 @@
+/*standard elements in use*/
+body {
+    font-family: 'Courier New', Courier, monospace, serif;
+    font-size: 14px;
+    overflow-y: scroll;
+    background-attachment: fixed;
+}
+h2 {
+    all: revert;
+}
+h4 {
+    all: revert;
+}
+/*custom elements*/
+.divbody {
+    margin: auto;
+    max-width: 900px;
+  }
+.divhead {
+    margin: auto;
+    width: 500px;
+}
+.centrimg {
+    padding: 14px;
+}
+.p0 {
+    margin: 0;
+}
+.post {
+    margin: auto;
+}

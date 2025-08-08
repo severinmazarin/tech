@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Networking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body background="loimg/checker.gif" link="000000" vlink="000000">
+<!-- + Header section-->
+<div id="000" class="divhead" align="center">
+    <table width="420px">
+        <tr>
+            <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td bgcolor="ffffff" width="16">&nbsp;</td>
+                        <td bgcolor="ffffff">&nbsp;</td>
+                        <td width="16" bgcolor="ffffff" >&nbsp;</td>
+                        <td width="16">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="ffffff"><br></td>
+                        <td align="center" bgcolor="ffffff">
+                            <h2>-=- SKARVEN'S TECH GUIDES -=-</h2>
+                            <a href="index.html">Home</a> / 
+                            <b><a href="network.html">Networking</a></b> /
+                            <a href="software.html">Software</a>
+                            <br>&nbsp;
+                        <td bgcolor="ffffff"><br></td>
+                        <td bgcolor="000000"><br></td>
+                    </tr>
+                    <tr>
+                        <td >&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                    </tr>            
+                </table>
+            </td>
+        </tr>
+        <tr><td></td></tr>
+        <tr>
+            <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td bgcolor="ffffff" width="16">&nbsp;</td>
+                        <td bgcolor="ffffff">&nbsp;</td>
+                        <td width="16" bgcolor="ffffff" >&nbsp;</td>
+                        <td width="16">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="ffffff"><br></td>
+                        <td bgcolor="ffffff">
+                            <b>Index / Networking</b> 
+                            <ol>
+                                <li><a href="#010">Host a website on Github with an OVH Cloud (sub-)domain</a></li>
+                            </ol>
+                        </td>
+                        <td bgcolor="ffffff"><br></td>
+                        <td bgcolor="000000"><br></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                    </tr>            
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<!-- - Header section-->
+<!-- + Content section-->
+<div class="divbody" align="center">
+    <table class="post" border="0" width="85%" bgcolor="ffffff" cellpadding="8" cellspacing="0">
+        <tr id="010">
+            <td bgcolor="000000">
+                <hr>
+                    <table>
+                        <tr>
+                            <td width="99%"><font color="ffffff"><i>1. Host a website on Github with an OVH Cloud (sub-)domain</i></font></td>
+                            <td><font color="ffffff">=/=</font></td>
+                        </tr>
+                    </table>
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>/ Introduction /</h4>
+                <p>Learn how to upload and host your website freely on Github. Using a custom domain will also allow you to use HTTP rather than HTTPS, allowing older computers access to your website. Redirect your domain to your Github repository by altering your DNS records.</p>
+                <h4>/ Prerequisites /</h4>
+                <p>I have already:</p>
+                <ul>
+                    <li>Registered the domain "xxxxx.xxx" at OVH Cloud (in this example "domain.com").</li>
+                    <li>Created a Github user "xxxxx.github.io" (in this example "user.github.io").</li>
+                    <li>Prepared the files that will make up my website (minimum "index.html").</li>
+                </ul>
+                <h4>/ Github /</h4>
+                <p>In the upper right corner of the screen, click the "+" sign to create a repository for our new webpage. In this example we'll call it "testsite", which will generate the repository "user.github.io/testsite".</p>
+                <div class="centrimg" align="center">
+                    <img src="loimg/network/1newrepo.gif" alt="New repository">
+                </div>
+                <p>Enter the repository tab "Settings" and choose "Pages" in the menu on the left hand side. Scroll down until you reach the section "Custom domain".</p>
+                <div class="centrimg" align="center">
+                    <img border="1" src="loimg/network/1custdom.gif" alt="Settings/custom domain">
+                </div>
+                <p>Enter your (sub-)domain in the box (including www.) and click "Save". In this example we'll enter "www.testsite.domain.com". An status message below the input box will indicate "DNS Check in Progress". The check will not be able finalize though, since we haven't yet redirected our domain to Github.</p>
+                <p>Head over to the "<> Code" tab.<p/>
+                <p>A "CNAME" file with the selected domain will be automatically generated in the repository root. It will contain only the domain you've just entered.</p>
+                <p>While in the "<> Code" tab, we will upload the "index.html" and other files needed for your website.</p>
+                <div class="centrimg" align="center">
+                    <img src="loimg/network/1addfile.gif" alt="Adding files to repo">
+                </div>
+                <p>Now we need to redirect traffic to our domain to our web page files hosted on Github, via our DNS provider (OVH Cloud).</p>
+                <h4>/ OVH Cloud /</h4>
+                <p>Log in to the "Web Cloud" dashboard.</p>
+                <p>Make sure you're running the dashboard in "Beta version" rather than "Standard version"!</p>
+                <p>Enter the "DNS zone" tab via Web Cloud/Domain Names for your chosen domain.</p>
+                <p>Delete the default "A" record(s) in the list.</p>
+                <div class="centrimg" align="center">
+                    <img border="1" src="loimg/network/1record.gif" alt="Default A record">
+                </div>
+                <p>Next, click the "Add an entry" button on the right hand side of the screen.</p>
+                <div class="centrimg" align="center">
+                    <img src="loimg/network/1addentr.gif" alt="Add DNS entry">
+                    <img border="1" src="loimg/network/1dnsentr.gif" alt="A record">
+                </div>
+                <p>Click "A", for A record.</p>
+                <p>And then input the following:</p>
+                <ul>
+                    <li>Sub-domain: "testsite.domain.com"</li>
+                    <li>TTL: "default"</li>
+                    <li>Target: "185.199.108.153"</li>
+                </ul>
+                <p>All in all, repeat and add in total four new "A" records with the following IPs (each one for "testsite.domain.com"):</p>
+                <ul>
+                    <li>185.199.108.153</li>
+                    <li>185.199.109.153</li>
+                    <li>185.199.110.153</li>
+                    <li>185.199.111.153</li>
+                </ul>
+                <p>When the "A" records are done, it is time to add one last entry - this time a "CNAME" record pointing to your PRIMARY Github domain.</p>
+                <p>Once more, click the "Add an entry" button.</p>
+                <p>Click "CNAME", and add the following parameters:</p>
+                <ul>
+                    <li>Sub-domain: "www.testsite.domain.com"</li>
+                    <li>TTL: "default"</li>
+                    <li>Target: "user.github.io"</li>
+                </ul>
+                <p>If everything is done correctly, it is only a short matter of time before your website will be live! Please be patient though, the DNS redirection settings might take a couple of minutes, or sometimes even hours before working properly.</p>
+                <h4>/ Sources /</h4>
+                <p>
+                <a href="https://medium.com/@rayan.khalilsebbar/github-pages-custom-domain-with-ovhcloud-5c66b13314e1">Medium article</a><br>
+                <a href="https://www.youtube.com/watch?v=1AgT4NHeg58&list=PLdQ6Pg7zv1mMUilfIMFIByQcUDOJ-dl55&index=10">Youtube video guide</a><br>
+                <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">Github documentation</a>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <hr>
+                <p class="p0" align="right">Tags: networking, github, ovh cloud, website, html / Published: 2025-06-02</p>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <table class="post" border="0" width="85%" bgcolor="ffffff" cellpadding="8" cellspacing="0">
+        <tr id="020">
+            <td bgcolor="000000">
+                <hr>
+                    <table>
+                        <tr>
+                            <td width="99%"><font color="ffffff"><i>2. Setup a MTCP in an IBM 5170</i></font></td>
+                            <td><font color="ffffff">=/=</font></td>
+                        </tr>
+                    </table>
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>/ Introduction /</h4>
+                <p>Learn how to upload and host your website freely on Github. Using a custom domain will also allow you to use HTTP rather than HTTPS, allowing older computers access to your website. Redirect your domain to your Github repository by altering your DNS records.</p>
+                <h4>/ Prerequisites /</h4>
+                <p>I have already:</p>
+                <ul>
+                    <li>16-bit ISA NIC. Preferably a 3com card.</li>
+                    <li>Some way to transfer files and drivers. Perhaps via floppy disk or Interlink.</li>
+                    <li>Text editor on the host PC.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <hr>
+                <p class="p0" align="right">Tags: networking, github, ovh cloud, website, html / Published: 2025-06-02</p>
+            </td>
+        </tr>
+    </table>
+    
+</div>
+<br>
+<!-- - Content section-->
+<!-- + Footer section-->
+<br>
+<div align="center">
+    <table width="420px" border="0" cellspacing="0">
+        <tr>
+            <td bgcolor="ffffff" width="16">&nbsp;</td>
+            <td bgcolor="ffffff">&nbsp;</td>
+            <td width="16">&nbsp;</td>
+        </tr>
+        <tr>
+            <td bgcolor="ffffff"><br></td>
+            <td align="center" bgcolor="ffffff">Skarven &copy; 2025. <a href="#000">Back to the top</a></td>
+            <td bgcolor="000000"><br></td>
+        </tr>
+        <tr>
+            <td bgcolor="ffffff"><br></td>
+            <td bgcolor="ffffff"><br></td>
+            <td bgcolor="000000"><br></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td bgcolor="000000">&nbsp;</td>
+            <td bgcolor="000000">&nbsp;</td>
+        </tr>            
+    </table>
+</div>
+<!-- - Footer section-->
+</body>
