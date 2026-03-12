@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hardware</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body background="loimg/checker.gif" link="000000" vlink="000000">
+<!-- + Header section-->
+<div id="000" class="divhead" align="center">
+    <table width="420px">
+        <tr>
+            <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td bgcolor="ffffff" width="16">&nbsp;</td>
+                        <td bgcolor="ffffff">&nbsp;</td>
+                        <td width="16" bgcolor="ffffff" >&nbsp;</td>
+                        <td width="16">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="ffffff"><br></td>
+                        <td align="center" bgcolor="ffffff">
+                            <h2>-=- SKARVEN'S TECH GUIDES -=-</h2>
+                            <a href="index.html">Home</a> / 
+                            <a href="network.html">Networking</a> /
+                            <a href="software.html">Software</a><br>
+                            <b><a href="hardware.html">Hardware</a></b>
+                            <br>&nbsp;
+                        </td>
+                        <td bgcolor="ffffff"><br></td>
+                        <td bgcolor="000000"><br></td>
+                    </tr>
+                    <tr>
+                        <td >&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                    </tr>            
+                </table>
+            </td>
+        </tr>
+        <tr><td></td></tr>
+        <tr>
+            <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td bgcolor="ffffff" width="16">&nbsp;</td>
+                        <td bgcolor="ffffff">&nbsp;</td>
+                        <td width="16" bgcolor="ffffff" >&nbsp;</td>
+                        <td width="16">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="ffffff"><br></td>
+                        <td bgcolor="ffffff">
+                            <b>Index / Hardware</b> 
+                            <ol>
+                                <li><a href="#010">Recapping the Bondwell 8 floppy drive</a></li>
+                            </ol>
+                        </td>
+                        <td bgcolor="ffffff"><br></td>
+                        <td bgcolor="000000"><br></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                        <td bgcolor="000000">&nbsp;</td>
+                    </tr>            
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<!-- - Header section-->
+<!-- + Content section-->
+<div class="divbody" align="center">
+    <table class="post" border="0" width="85%" bgcolor="ffffff" cellpadding="8" cellspacing="0">
+        <tr id="010">
+            <td bgcolor="000000">
+                <hr>
+                    <table>
+                        <tr>
+                            <td width="99%"><font color="ffffff"><i>1. Recapping the Bondwell 8 floppy drive</i></font></td>
+                            <td><font color="ffffff">=/=</font></td>
+                        </tr>
+                    </table>
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>/ Introduction /</h4>
+                <p>The floppy drive in my Bondwell Model 8 was sometimes working, sometimes not. Clear was however, that the track record wasn't getting better over time. So after a thorough clean and lubrication, I decided to recap the drive.</p>
+                <p>The drive is a Teac branded 720 kb. Unfortunately I forgot to take a picture of the model name of the drive itself, and I am too lazy to open the whole case up again. So - add to to do list - check the model number next time I have the opportunity. </p>
+                <div class="centrimg" align="center">
+                    <img src="loimg/hardware/1bwa.gif" alt="Bondwell 8 PC">
+                    <img src="loimg/hardware/1bwflop.gif" alt="Floppy drive exterior">
+                </div>
+                To the left - a overview of the PC, with the screen opened. To the right, a detail image of the face plate of the floppy drive. Note the unusual height, something like 50% taller than usual - the Bondwell 8 was launched in 1985 - before the form factor of 3.5" floppy drives was fully standardized.
+                <h4>/ Capacitor list /</h4>
+                <p>Note that the capacitors may not be taller than 6mm. One might get away to soldering them in a "lying down" position though.</p>
+                Top PCB
+                <ul>
+                    <li>1x 100uF 10V</li>
+                    <li>1x 33uF &nbsp;25V</li>
+                    <li>1x 4.7uF 25V</li>
+                </ul>
+                All original caps on the top PCB are soldered through-hole. "Huvud"=R/W head. "Kontakt"=connector. Do you prefer hand-drawn or ASCII art schematics?
+                <div class="centrimg" align="center">
+                    <img src="loimg/hardware/1bwtop.gif" alt="Top PCB drawing">FRONT ->
+                </div>
+                <pre>
+                l--------------------------------------------------l
+                l                                   l-----------l  l
+                l                                   l CONNECTOR l  l
+                l                                __ l-----------l  l
+                l                               /+-\               l
+                l                               \__/               l
+                l                            4.7uF 25V             l
+                l       l----------l                               l
+                l       l R/W HEAD l                               l  FRONT ->
+                l       l----------l                               l
+                l                                                  l
+                l      __        __                                l
+                l     /+-\      /+-\                               l
+                l     \__/      \__/                               l
+                l   33uF 25V  100uF 10V                            l
+                l                                                  l
+                l--------------------------------------------------l 
+                </pre>
+                Bottom PCB
+                <ul>
+                    <li>1x 47uF 25V</li>
+                    <li>1x 10uF 16V</li>
+                    <li>2x 10uF 35V (bipolar)</li>
+                </ul>
+                All original caps on the bottom PCB are traditional radial type, soldered on SMD pads. The bipolar caps are from GND to +5V on the motor power delivery.
+                <div class="centrimg" align="center">
+                    <img src="loimg/hardware/1bwbot.gif" alt="Bottom PCB drawing">FRONT ->
+                </div>
+                <h4>/ Conclusion /</h4>
+                <p>All in all the recapping was very uneventful, if a bit fiddly due to the small sizes of the capacitors. I also did not want to remove the bottom PCB from the drive assembly, as this would necessitate removing the flywheel. I can happily report that the floppy drive has worked reliably ever since!</p>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <hr>
+                <p class="p0" align="right">Tags: bondwell, teac, recapping, floppy / Published: 2026-03-09</p>
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<!-- - Content section-->
+<!-- + Footer section-->
+<br>
+<div align="center">
+    <table width="420px" border="0" cellspacing="0">
+        <tr>
+            <td bgcolor="ffffff" width="16">&nbsp;</td>
+            <td bgcolor="ffffff">&nbsp;</td>
+            <td width="16">&nbsp;</td>
+        </tr>
+        <tr>
+            <td bgcolor="ffffff"><br></td>
+            <td align="center" bgcolor="ffffff">Skarven &copy; 2026. <a href="#000">Back to the top</a></td>
+            <td bgcolor="000000"><br></td>
+        </tr>
+        <tr>
+            <td bgcolor="ffffff"><br></td>
+            <td bgcolor="ffffff"><br></td>
+            <td bgcolor="000000"><br></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td bgcolor="000000">&nbsp;</td>
+            <td bgcolor="000000">&nbsp;</td>
+        </tr>            
+    </table>
+</div>
+<!-- - Footer section-->
+</body>
